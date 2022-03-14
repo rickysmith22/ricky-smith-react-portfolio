@@ -8,7 +8,7 @@ export default class PortfolioContainer extends Component {
     super();
 
     this.state = {
-      pageTitle: "Welcome to my portfolio",
+      pageTitle: "Welcome!",
       isLoading: false,
       data: []
     };
@@ -26,7 +26,7 @@ export default class PortfolioContainer extends Component {
 
   getPortfolioItems() {
     axios
-      .get("https:/rickysmith22.devcamp.space/portfolio/portfolio_items")
+      .get("https://rickysmith22.devcamp.space/portfolio/portfolio_items")
       .then(response => {
         this.setState({
           data: response.data.portfolio_items
@@ -54,17 +54,16 @@ export default class PortfolioContainer extends Component {
 
     return (
       <div className="portfolio-items-wrapper">
+        <button className="btn" onClick={() => this.handleFilter("Wedding")}>
+          Wedding
+        </button>
+        <button className="btn" onClick={() => this.handleFilter("Sky")}>
+          Sky 
+        </button>
+        <button className="btn" onClick={() => this.handleFilter("Zoe")}>
+          Zoe 
+        </button>
 
-        <button className="btn" onClick={() => this.handleFilter("eCommerce")}>
-          eCommerce
-        </button>
-        <button className="btn" onClick={() => this.handleFilter("Scheduling")}>
-          Scheduling
-        </button>
-        <button className="btn" onClick={() => this.handleFilter("Enterprise")}>
-          Enterprise
-        </button>
-        
         {this.portfolioItems()}
       </div>
     );
