@@ -1,7 +1,4 @@
-
-   
 import React from "react";
-// import profilePicture from "../../../static/assets/images/bio/headshot.jpg";
 
 export default function() {
   return (
